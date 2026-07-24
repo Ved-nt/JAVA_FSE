@@ -1,9 +1,46 @@
-<h2>Home Page</h2>
-<p>Welcome to the Student Course Portal.</p><h2>Welcome to Student Course Portal</h2>
+<div class="card">
+
+    <!-- All previous HTML goes here -->
+     <h2>Welcome {{studentName}}</h2>
 
 <p>
-    Manage your courses, view your profile, and explore learning resources
-    using this Angular application.
+    You are enrolled in
+    <strong>{{course}}</strong>.
 </p>
 
-<button>Explore Courses</button>
+<p>
+    Total Available Courses :
+    <strong>{{totalCourses}}</strong>
+</p>
+
+<h3>Angular Logo</h3>
+
+<img
+    [src]="imageUrl"
+    width="120"
+    alt="Angular Logo">
+
+<button (click)="showMessage()">
+
+    Click Me
+
+</button>
+
+<p>{{message}}</p>
+
+<hr>
+
+<h3>Student Registration</h3>
+
+<input
+type="text"
+placeholder="Enter your name"
+[(ngModel)]="studentInput">
+
+<p>
+
+Hello {{studentInput}}
+
+</p>
+
+</div>

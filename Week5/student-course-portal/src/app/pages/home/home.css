@@ -1,24 +1,63 @@
-h2 {
-    color: #1976d2;
-    margin-bottom: 20px;
+.container{
+
+    margin-top:20px;
+
 }
 
-p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    line-height: 1.6;
+.card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    box-shadow:0 0 10px rgba(0,0,0,.15);
+
 }
 
-button {
-    background-color: #1976d2;
-    color: white;
-    border: none;
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
+img{
+
+    margin:20px 0;
+
 }
 
-button:hover {
-    background-color: #0d47a1;
+button{
+
+    background:#1976d2;
+
+    color:white;
+
+    border:none;
+
+    padding:10px 20px;
+
+    cursor:pointer;
+
+    border-radius:5px;
+
+}
+
+button:hover{
+
+    background:#0d47a1;
+
+}
+
+input{
+
+    margin-top:15px;
+
+    width:300px;
+
+    padding:10px;
+
+    font-size:16px;
+
+}
+
+h2{
+
+    color:#1976d2;
+
 }
