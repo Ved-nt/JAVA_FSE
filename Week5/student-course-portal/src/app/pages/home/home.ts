@@ -9,11 +9,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class Home {
 
+  // Data Binding Variables
   studentName = "Vedant Sharma";
 
   course = "Angular Development";
-
-  totalCourses = 8;
 
   imageUrl = "https://angular.dev/assets/images/press-kit/angular_icon_gradient.gif";
 
@@ -21,8 +20,36 @@ export class Home {
 
   studentInput = "";
 
+  // Structural Directive Variables
+  isLoggedIn = false;
+
+  courses = [
+    "Angular",
+    "Spring Boot",
+    "React",
+    "Java",
+    "SQL"
+  ];
+
+  courseList = [
+    { id: 1, name: "Angular", instructor: "John", fee: 5000 },
+    { id: 2, name: "Spring Boot", instructor: "David", fee: 7000 },
+    { id: 3, name: "React", instructor: "Chris", fee: 6000 }
+  ];
+
+  notifications: string[] = [];
+
+  // Dynamic course count
+  get totalCourses() {
+    return this.courseList.length;
+  }
+
   showMessage() {
     this.message = "Welcome to Angular! Happy Learning.";
+  }
+
+  toggleLogin() {
+    this.isLoggedIn = !this.isLoggedIn;
   }
 
 }

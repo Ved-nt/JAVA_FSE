@@ -1,46 +1,124 @@
 <div class="card">
 
-    <!-- All previous HTML goes here -->
-     <h2>Welcome {{studentName}}</h2>
+    <h2>Welcome {{studentName}}</h2>
 
-<p>
-    You are enrolled in
-    <strong>{{course}}</strong>.
-</p>
+    <p>
+        You are enrolled in
+        <strong>{{course}}</strong>.
+    </p>
 
-<p>
-    Total Available Courses :
-    <strong>{{totalCourses}}</strong>
-</p>
+    <p>
+        Total Available Courses :
+        <strong>{{totalCourses}}</strong>
+    </p>
 
-<h3>Angular Logo</h3>
+    <h3>Angular Logo</h3>
 
-<img
-    [src]="imageUrl"
-    width="120"
-    alt="Angular Logo">
+    <img
+        [src]="imageUrl"
+        width="120"
+        alt="Angular Logo">
 
-<button (click)="showMessage()">
+    <br><br>
 
-    Click Me
+    <button (click)="showMessage()">
+        Click Me
+    </button>
 
-</button>
+    <p>{{message}}</p>
 
-<p>{{message}}</p>
+    <hr>
 
-<hr>
+    <h3>Student Registration</h3>
 
-<h3>Student Registration</h3>
+    <input
+        type="text"
+        placeholder="Enter your name"
+        [(ngModel)]="studentInput">
 
-<input
-type="text"
-placeholder="Enter your name"
-[(ngModel)]="studentInput">
+    <p>Hello {{studentInput}}</p>
 
-<p>
+    <hr>
 
-Hello {{studentInput}}
+    <button (click)="toggleLogin()">
+        Toggle Login
+    </button>
 
-</p>
+    @if(isLoggedIn){
+
+        <h3 class="success">
+            Welcome Back {{studentName}}
+        </h3>
+
+    } @else {
+
+        <h3 class="error">
+            Please Login First
+        </h3>
+
+    }
+
+    <hr>
+
+    <h2>Available Courses</h2>
+
+    <ul>
+
+        @for(course of courses; track course){
+
+            <li>{{course}}</li>
+
+        }
+
+    </ul>
+
+    <hr>
+
+    <h2>Course Details</h2>
+
+    <table>
+
+        <tr>
+            <th>ID</th>
+            <th>Course</th>
+            <th>Instructor</th>
+            <th>Fee</th>
+        </tr>
+
+        @for(course of courseList; track course.id){
+
+            <tr>
+
+                <td>{{course.id}}</td>
+
+                <td>{{course.name}}</td>
+
+                <td>{{course.instructor}}</td>
+
+                <td>₹{{course.fee}}</td>
+
+            </tr>
+
+        }
+
+    </table>
+
+    <hr>
+
+    <h2>Notifications</h2>
+
+    @if(notifications.length == 0){
+
+        <p>No Notifications Available.</p>
+
+    } @else {
+
+        @for(notification of notifications; track notification){
+
+            <p>{{notification}}</p>
+
+        }
+
+    }
 
 </div>
