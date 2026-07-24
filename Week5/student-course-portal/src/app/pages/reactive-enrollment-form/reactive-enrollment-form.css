@@ -1,0 +1,160 @@
+.container{
+
+    width:600px;
+
+    margin:40px auto;
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    box-shadow:0 0 10px rgba(0,0,0,0.15);
+
+}
+
+h2{
+
+    text-align:center;
+
+    color:#1976d2;
+
+    margin-bottom:25px;
+
+}
+
+.form-group{
+
+    margin-bottom:20px;
+
+}
+
+label{
+
+    display:block;
+
+    font-weight:bold;
+
+    margin-bottom:8px;
+
+}
+
+input,
+select{
+
+    width:100%;
+
+    padding:10px;
+
+    font-size:16px;
+
+    border:1px solid #ccc;
+
+    border-radius:5px;
+
+    box-sizing:border-box;
+
+}
+
+.checkbox{
+
+    display:flex;
+
+    align-items:center;
+
+    margin-top:20px;
+
+}
+
+.checkbox input{
+
+    width:auto;
+
+    margin-right:10px;
+
+}
+
+button{
+
+    width:100%;
+
+    padding:12px;
+
+    background:#1976d2;
+
+    color:white;
+
+    border:none;
+
+    border-radius:5px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    margin-top:20px;
+
+}
+
+button:hover{
+
+    background:#0d47a1;
+
+}
+
+button:disabled{
+
+    background:gray;
+
+    cursor:not-allowed;
+
+}
+
+.error{
+
+    color:red;
+
+    font-size:14px;
+
+    display:block;
+
+    margin-top:5px;
+
+}
+
+/* Angular automatically adds these classes */
+
+.ng-invalid.ng-touched{
+
+    border:2px solid red;
+
+}
+
+.ng-valid.ng-touched{
+
+    border:2px solid green;
+
+}
+
+.course-row{
+
+    display:flex;
+
+    gap:10px;
+
+    margin-bottom:10px;
+
+}
+
+.course-row input{
+
+    flex:1;
+
+}
+
+.course-row button{
+
+    width:120px;
+
+}

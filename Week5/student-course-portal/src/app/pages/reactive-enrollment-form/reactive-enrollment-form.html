@@ -1,0 +1,226 @@
+<div class="container">
+
+    <h2>Student Enrollment Form (Reactive Forms)</h2>
+
+    <form
+        [formGroup]="enrollForm"
+        (ngSubmit)="onSubmit()">
+
+        <!-- Name -->
+
+        <div class="form-group">
+
+            <label>Student Name</label>
+
+            <input
+                type="text"
+                formControlName="studentName"
+                placeholder="Enter your name">
+
+            @if(enrollForm.get('studentName')?.touched &&
+            enrollForm.get('studentName')?.hasError('required')){
+
+            <small class="error">
+
+                Name is required
+
+            </small>
+
+            }
+
+            @if(enrollForm.get('studentName')?.touched &&
+            enrollForm.get('studentName')?.hasError('minlength')){
+
+            <small class="error">
+
+                Minimum 3 characters required
+
+            </small>
+
+            }
+
+        </div>
+
+        <!-- Email -->
+
+        <div class="form-group">
+
+            <label>Email</label>
+
+            <input
+                type="email"
+                formControlName="studentEmail"
+                placeholder="Enter your email">
+
+            @if(enrollForm.get('studentEmail')?.touched &&
+            enrollForm.get('studentEmail')?.hasError('required')){
+
+            <small class="error">
+
+                Email is required
+
+            </small>
+
+            }
+
+            @if(enrollForm.get('studentEmail')?.touched &&
+            enrollForm.get('studentEmail')?.hasError('email')){
+
+            <small class="error">
+
+                Invalid Email
+
+            </small>
+
+            }
+
+            @if(enrollForm.get('studentEmail')?.pending){
+
+            <small>
+
+                Checking Email...
+
+            </small>
+
+            }
+
+            @if(enrollForm.get('studentEmail')?.errors?.['emailTaken']){
+
+            <small class="error">
+
+                Email already exists.
+
+            </small>
+
+            }
+
+        </div>
+
+        <!-- Course ID -->
+
+        <div class="form-group">
+
+            <label>Course ID</label>
+
+            <input
+                type="text"
+                formControlName="courseId"
+                placeholder="Enter Course ID">
+
+            @if(enrollForm.get('courseId')?.touched &&
+            enrollForm.get('courseId')?.hasError('required')){
+
+            <small class="error">
+
+                Course ID is required
+
+            </small>
+
+            }
+
+            @if(enrollForm.get('courseId')?.touched &&
+            enrollForm.get('courseId')?.errors?.['noCourseCode']){
+
+            <small class="error">
+
+                Course code starting with XX is not allowed.
+
+            </small>
+
+            }
+
+        </div>
+
+        <!-- Semester -->
+
+        <div class="form-group">
+
+            <label>Preferred Semester</label>
+
+            <select formControlName="preferredSemester">
+
+                <option value="Odd">Odd</option>
+
+                <option value="Even">Even</option>
+
+            </select>
+
+        </div>
+
+        <!-- Terms -->
+
+        <div class="checkbox">
+
+            <input
+                type="checkbox"
+                id="terms"
+                formControlName="agreeToTerms">
+
+            <label for="terms">
+
+                I agree to the Terms & Conditions
+
+            </label>
+
+        </div>
+
+        @if(enrollForm.get('agreeToTerms')?.touched &&
+        enrollForm.get('agreeToTerms')?.hasError('required')){
+
+        <small class="error">
+
+            Please accept the terms.
+
+        </small>
+
+        }
+
+        <hr>
+
+        <h3>Additional Courses</h3>
+
+        <button
+            type="button"
+            (click)="addCourse()">
+
+            Add Another Course
+
+        </button>
+
+        <br><br>
+
+        @for(course of additionalCourseControls;
+        track $index;
+        let i = $index){
+
+        <div class="course-row">
+
+            <input
+                [formControl]="course"
+                placeholder="Additional Course">
+
+            <button
+                type="button"
+                (click)="removeCourse(i)">
+
+                Remove
+
+            </button>
+
+        </div>
+
+        <br>
+
+        }
+
+        <button
+            type="submit"
+            [disabled]="enrollForm.invalid">
+
+            Submit
+
+        </button>
+
+    </form>
+
+</div>
