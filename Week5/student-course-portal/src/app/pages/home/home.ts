@@ -1,15 +1,16 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NgClass, NgStyle } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule],
+  imports: [FormsModule, NgClass, NgStyle],
   templateUrl: './home.html',
   styleUrl: './home.css'
 })
 export class Home {
 
-  // Data Binding Variables
+
   studentName = "Vedant Sharma";
 
   course = "Angular Development";
@@ -20,8 +21,11 @@ export class Home {
 
   studentInput = "";
 
-  // Structural Directive Variables
+
+
   isLoggedIn = false;
+
+  status = "Offline";
 
   courses = [
     "Angular",
@@ -32,12 +36,33 @@ export class Home {
   ];
 
   courseList = [
-    { id: 1, name: "Angular", instructor: "John", fee: 5000 },
-    { id: 2, name: "Spring Boot", instructor: "David", fee: 7000 },
-    { id: 3, name: "React", instructor: "Chris", fee: 6000 }
+    {
+      id: 1,
+      name: "Angular",
+      instructor: "John",
+      fee: 5000
+    },
+    {
+      id: 2,
+      name: "Spring Boot",
+      instructor: "David",
+      fee: 7000
+    },
+    {
+      id: 3,
+      name: "React",
+      instructor: "Chris",
+      fee: 6000
+    }
   ];
 
   notifications: string[] = [];
+
+
+
+  buttonColor = "#1976d2";
+
+  headingColor = "#1976d2";
 
   // Dynamic course count
   get totalCourses() {
@@ -45,11 +70,27 @@ export class Home {
   }
 
   showMessage() {
+
     this.message = "Welcome to Angular! Happy Learning.";
+
+    this.buttonColor = "green";
+
   }
 
   toggleLogin() {
+
     this.isLoggedIn = !this.isLoggedIn;
+
+    if (this.isLoggedIn) {
+
+      this.status = "Online";
+
+    } else {
+
+      this.status = "Offline";
+
+    }
+
   }
 
 }

@@ -1,0 +1,211 @@
+<div class="container">
+
+<h2>Student Enrollment Form</h2>
+
+<form
+#enrollForm="ngForm"
+(ngSubmit)="onSubmit(enrollForm)">
+
+<!-- Name -->
+
+<label>Name</label>
+
+<input
+
+type="text"
+
+name="studentName"
+
+[(ngModel)]="studentName"
+
+required
+
+minlength="3"
+
+#nameCtrl="ngModel">
+
+<div class="error">
+
+@if(nameCtrl.touched && nameCtrl.errors?.['required']){
+
+<span>
+
+Name is required
+
+</span>
+
+}
+
+@if(nameCtrl.touched && nameCtrl.errors?.['minlength']){
+
+<span>
+
+Minimum 3 characters required
+
+</span>
+
+}
+
+</div>
+
+<!-- Email -->
+
+<label>Email</label>
+
+<input
+
+type="email"
+
+name="studentEmail"
+
+[(ngModel)]="studentEmail"
+
+required
+
+email
+
+#emailCtrl="ngModel">
+
+<div class="error">
+
+@if(emailCtrl.touched && emailCtrl.errors?.['required']){
+
+<span>Email is required</span>
+
+}
+
+@if(emailCtrl.touched && emailCtrl.errors?.['email']){
+
+<span>Invalid Email</span>
+
+}
+
+</div>
+
+<!-- Course -->
+
+<label>Course ID</label>
+
+<input
+
+type="number"
+
+name="courseId"
+
+[(ngModel)]="courseId"
+
+required
+
+#courseCtrl="ngModel">
+
+<div class="error">
+
+@if(courseCtrl.touched && courseCtrl.errors?.['required']){
+
+<span>Course ID Required</span>
+
+}
+
+</div>
+
+<!-- Semester -->
+
+<label>Semester</label>
+
+<select
+
+name="preferredSemester"
+
+[(ngModel)]="preferredSemester"
+
+required
+
+#semesterCtrl="ngModel">
+
+<option value="">Choose</option>
+
+<option>Odd</option>
+
+<option>Even</option>
+
+</select>
+
+<div class="error">
+
+@if(semesterCtrl.touched && semesterCtrl.errors?.['required']){
+
+<span>Select Semester</span>
+
+}
+
+</div>
+
+<!-- Terms -->
+
+<label>
+
+<input
+
+type="checkbox"
+
+name="agreeToTerms"
+
+[(ngModel)]="agreeToTerms"
+
+required
+
+#termsCtrl="ngModel">
+
+I Agree to Terms
+
+</label>
+
+<div class="error">
+
+@if(termsCtrl.touched && termsCtrl.errors?.['required']){
+
+<span>
+
+Please accept terms
+
+</span>
+
+}
+
+</div>
+
+<br><br>
+
+<button
+
+type="submit"
+
+[disabled]="enrollForm.invalid">
+
+Submit
+
+</button>
+
+<button
+
+type="button"
+
+(click)="enrollForm.resetForm()">
+
+Reset
+
+</button>
+
+</form>
+
+@if(submitted){
+
+<div class="success">
+
+Enrollment request submitted successfully!
+
+</div>
+
+}
+
+</div>

@@ -19,9 +19,11 @@
         width="120"
         alt="Angular Logo">
 
-    <br><br>
+    <br>
 
-    <button (click)="showMessage()">
+    <button
+        (click)="showMessage()"
+        [ngStyle]="{'background-color':buttonColor}">
         Click Me
     </button>
 
@@ -41,32 +43,59 @@
     <hr>
 
     <button (click)="toggleLogin()">
+
         Toggle Login
+
     </button>
 
     @if(isLoggedIn){
 
-        <h3 class="success">
-            Welcome Back {{studentName}}
-        </h3>
+    <h3 class="success">
 
-    } @else {
+        Welcome Back {{studentName}}
 
-        <h3 class="error">
-            Please Login First
-        </h3>
+    </h3>
 
     }
 
+    @else{
+
+    <h3 class="error">
+
+        Please Login First
+
+    </h3>
+
+    }
+
+    <h3>User Status</h3>
+
+    <p
+        [ngClass]="{
+
+        'online':isLoggedIn,
+
+        'offline':!isLoggedIn
+
+    }">
+
+        {{status}}
+
+    </p>
+
     <hr>
 
-    <h2>Available Courses</h2>
+    <h2 [ngStyle]="{'color':headingColor}">
+
+        Available Courses
+
+    </h2>
 
     <ul>
 
         @for(course of courses; track course){
 
-            <li>{{course}}</li>
+        <li>{{course}}</li>
 
         }
 
@@ -79,25 +108,41 @@
     <table>
 
         <tr>
+
             <th>ID</th>
+
             <th>Course</th>
+
             <th>Instructor</th>
+
             <th>Fee</th>
+
         </tr>
 
         @for(course of courseList; track course.id){
 
-            <tr>
+        <tr>
 
-                <td>{{course.id}}</td>
+            <td>{{course.id}}</td>
 
-                <td>{{course.name}}</td>
+            <td>{{course.name}}</td>
 
-                <td>{{course.instructor}}</td>
+            <td>{{course.instructor}}</td>
 
-                <td>₹{{course.fee}}</td>
+            <td
+                [ngStyle]="{
 
-            </tr>
+                    'color':course.fee>=6000?'green':'black',
+
+                    'font-weight':course.fee>=6000?'bold':'normal'
+
+                }">
+
+                ₹{{course.fee}}
+
+            </td>
+
+        </tr>
 
         }
 
@@ -105,19 +150,60 @@
 
     <hr>
 
-    <h2>Notifications</h2>
+    <h2>Course Cards</h2>
 
-    @if(notifications.length == 0){
+    <div class="course-container">
 
-        <p>No Notifications Available.</p>
+        @for(course of courseList; track course.id){
 
-    } @else {
+        <div
+            class="course-card"
 
-        @for(notification of notifications; track notification){
+            [ngClass]="course.fee>=6000 ? 'premium':'normal'">
 
-            <p>{{notification}}</p>
+            <h3>{{course.name}}</h3>
+
+            <p>
+
+                Instructor :
+                {{course.instructor}}
+
+            </p>
+
+            <p>
+
+                Fee :
+                ₹{{course.fee}}
+
+            </p>
+
+        </div>
 
         }
+
+    </div>
+
+    <hr>
+
+    <h2>Notifications</h2>
+
+    @if(notifications.length==0){
+
+    <p>
+
+        No Notifications Available.
+
+    </p>
+
+    }
+
+    @else{
+
+    @for(notification of notifications; track notification){
+
+    <p>{{notification}}</p>
+
+    }
 
     }
 
