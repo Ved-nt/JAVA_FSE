@@ -1,0 +1,49 @@
+
+Week 6 - Hands-On 2
+Git Ignore
+
+
+Objective:
+Learn how to ignore unwanted files and folders using .gitignore.
+
+Commands Used:
+
+1. Navigate to Week6
+   cd ~/projects/JAVA_FSE/Week6
+
+2. Create a log file
+   touch app.log
+
+3. Create a logs folder
+   mkdir logs
+
+4. Create a log inside logs
+   touch logs/error.log
+
+5. Create .gitignore
+   touch .gitignore
+
+6. Edit .gitignore
+   nano .gitignore
+
+Contents of .gitignore:
+
+*.log
+logs/
+
+7. Verify ignored files
+   git status
+
+8. Stage .gitignore
+   git add .gitignore
+
+9. Commit changes
+   git commit -m "Week 6 Hands-On 2: Added .gitignore"
+
+10. Push changes
+    git push
+
+Result:
+- All .log files are ignored.
+- The logs folder is ignored.
+- Only .gitignore is tracked by Git.
