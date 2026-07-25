@@ -1,0 +1,42 @@
+===============================
+Week 6 - Git Hands-On Lab
+Hands-On 1: Git Configuration
+===============================
+
+Objective:
+Learn basic Git commands and repository operations.
+
+Commands Practiced:
+
+1. Check Git Version
+   git --version
+
+2. Configure Username
+   git config --global user.name "Vedant Sharma"
+
+3. Configure Email
+   git config --global user.email "your-email@example.com"
+
+4. Verify Configuration
+   git config --list
+
+5. Check Repository Status
+   git status
+
+6. Stage File
+   git add welcome.txt
+
+7. Commit Changes
+   git commit -m "Completed Week 6 Hands-On 1"
+
+8. Pull Latest Changes
+   git pull origin main
+
+9. Push Changes
+   git push origin main
+
+Repository:
+JAVA_FSE
+
+Author:
+Vedant Sharma
