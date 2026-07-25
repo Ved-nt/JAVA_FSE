@@ -1,0 +1,28 @@
+====================================
+Week 6 - Hands-On 3
+Git Branching & Merging
+====================================
+
+Branch Name:
+GitNewBranch
+
+Objective:
+Learn branching and merging in Git.
+
+Commands Practiced:
+
+git branch GitNewBranch
+
+git switch GitNewBranch
+
+git branch
+
+git add
+
+git commit
+
+git merge
+
+git log --oneline --graph --decorate
+
+git branch -d GitNewBranch
