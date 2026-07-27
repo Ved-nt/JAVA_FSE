@@ -1,0 +1,49 @@
+Week 6 - Hands-On 4
+Git Merge Conflict Resolution
+Objective:
+Learn how to resolve merge conflicts in Git.
+
+Commands Used:
+
+git status
+
+git branch GitWork
+
+git switch GitWork
+
+git add Week6/hello.xml
+
+git commit -m "Added hello.xml in GitWork branch"
+
+git switch main
+
+git add Week6/hello.xml
+
+git commit -m "Added hello.xml in main branch"
+
+git log --oneline --graph --decorate --all
+
+git diff main GitWork
+
+git merge GitWork
+
+# Resolve conflict manually
+
+git add Week6/hello.xml
+
+git commit -m "Resolved merge conflict"
+
+git add Week6/.gitignore
+
+git commit -m "Ignore backup files"
+
+git branch
+
+git branch -d GitWork
+
+git log --oneline --graph --decorate
+
+git push origin main
+
+Result:
+Successfully created a merge conflict, resolved it manually, updated .gitignore, and merged the branch into main.
