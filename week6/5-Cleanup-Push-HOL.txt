@@ -1,0 +1,27 @@
+Week 6 - Hands-On 5
+Cleanup and Push to Remote Git
+
+Objective:
+Learn how to synchronize the local repository with the remote Git repository.
+
+Commands Used:
+
+1. Verify repository status
+   git status
+
+2. List local branches
+   git branch
+
+3. List local and remote branches
+   git branch -a
+
+4. Pull the latest changes from GitHub
+   git pull origin main
+
+5. Push local commits to GitHub
+   git push origin main
+
+6. Verify the changes on GitHub
+
+Result:
+Successfully synchronized the local repository with the remote repository. Verified that all Week 6 files are available on GitHub.
