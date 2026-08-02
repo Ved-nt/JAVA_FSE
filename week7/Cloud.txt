@@ -1,0 +1,52 @@
+Cloud Fundamentals
+
+Cloud Computing is the delivery of computing services such as servers, storage, databases, networking, software, and analytics over the internet. It enables users and organizations to access IT resources on demand without owning or maintaining physical infrastructure.
+
+Key Concepts:
+- On-demand self-service
+- Broad network access
+- Resource pooling
+- Rapid elasticity
+- Measured service (pay-as-you-go)
+
+Cloud Service Models:
+- Infrastructure as a Service (IaaS): Provides virtual machines, storage, and networking.
+- Platform as a Service (PaaS): Offers a platform for developing, testing, and deploying applications.
+- Software as a Service (SaaS): Delivers software applications over the internet without local installation.
+
+Deployment Models:
+- Public Cloud
+- Private Cloud
+- Hybrid Cloud
+- Multi-Cloud
+
+Benefits:
+- Scalability and flexibility
+- Cost optimization
+- High availability and reliability
+- Faster application deployment
+- Enhanced collaboration
+- Automatic updates and maintenance
+
+Common Cloud Providers:
+- Amazon Web Services (AWS)
+- Microsoft Azure
+- Google Cloud Platform (GCP)
+
+Applications:
+- Web and mobile application hosting
+- Data storage and backup
+- Big data analytics
+- Artificial Intelligence and Machine Learning
+- Disaster recovery
+- Internet of Things (IoT)
+
+Challenges:
+- Data security and privacy
+- Compliance requirements
+- Vendor lock-in
+- Downtime risks
+- Cost management
+
+Conclusion:
+Cloud Computing has become a foundation of modern IT infrastructure by providing scalable, reliable, and cost-effective computing resources. Understanding cloud fundamentals helps organizations build, deploy, and manage applications efficiently while supporting digital transformation.

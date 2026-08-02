@@ -1,0 +1,46 @@
+Docker Fundamentals
+
+Docker is an open-source containerization platform that enables developers to build, package, and run applications in lightweight, portable containers. Containers include the application along with its dependencies, ensuring consistent behavior across different environments.
+
+Key Concepts:
+- Containers: Isolated environments that run applications.
+- Images: Read-only templates used to create containers.
+- Dockerfile: A script containing instructions to build a Docker image.
+- Docker Hub: A cloud-based repository for storing and sharing Docker images.
+- Volumes: Used for persistent data storage.
+- Networks: Enable communication between containers.
+
+Core Docker Commands:
+- docker pull: Download an image from Docker Hub.
+- docker build: Build an image from a Dockerfile.
+- docker run: Create and start a container.
+- docker ps: List running containers.
+- docker stop: Stop a running container.
+- docker rm: Remove a container.
+- docker images: List available images.
+- docker push: Upload an image to Docker Hub.
+
+Benefits:
+- Consistent development and production environments
+- Fast application deployment
+- Lightweight compared to virtual machines
+- Improved resource utilization
+- Simplified dependency management
+- Easy scalability using container orchestration tools
+
+Applications:
+- Microservices architecture
+- Continuous Integration and Continuous Deployment (CI/CD)
+- Cloud-native application development
+- Application testing
+- DevOps workflows
+- Multi-container applications using Docker Compose
+
+Challenges:
+- Container security
+- Persistent data management
+- Networking complexity
+- Learning container orchestration tools such as Kubernetes
+
+Conclusion:
+Docker simplifies application development, deployment, and scaling by using containers. It improves portability, consistency, and efficiency, making it an essential tool for modern software development, DevOps, and cloud computing.

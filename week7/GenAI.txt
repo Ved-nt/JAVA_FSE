@@ -1,0 +1,33 @@
+Generative AI Fundamentals
+
+Generative Artificial Intelligence (GenAI) is a branch of AI that creates new content such as text, images, audio, videos, and code by learning patterns from existing data. Unlike traditional AI, which focuses on prediction or classification, GenAI generates original outputs based on user prompts.
+
+Key Concepts:
+- Large Language Models (LLMs) such as GPT are trained on massive datasets.
+- Transformers are the deep learning architecture behind modern GenAI models.
+- Prompt Engineering is the process of writing effective prompts to obtain better AI-generated results.
+- Fine-tuning and Retrieval-Augmented Generation (RAG) help customize models for specific domains.
+
+Applications:
+- Content creation
+- Chatbots and virtual assistants
+- Code generation
+- Image and video generation
+- Document summarization
+- Translation and language assistance
+
+Benefits:
+- Improves productivity
+- Automates repetitive tasks
+- Enhances creativity
+- Supports decision-making with AI-powered insights
+
+Challenges:
+- Hallucinations (incorrect information)
+- Bias in generated content
+- Privacy and security concerns
+- Ethical use of AI
+- Copyright and intellectual property issues
+
+Conclusion:
+Generative AI is transforming industries by enabling intelligent content generation and automation. Understanding its fundamentals, capabilities, limitations, and responsible usage is essential for leveraging AI effectively in real-world applications.
